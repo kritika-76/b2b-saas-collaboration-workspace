@@ -1,5 +1,13 @@
+import MainLayout from "../../components/layout/MainLayout";
+
 const Profile = () => {
-  return <h1>Profile</h1>;
+  return (
+    <MainLayout>
+      <div className="dashboard-page">
+        <h1>Profile Page</h1>
+      </div>
+    </MainLayout>
+  );
 };
 
 export default Profile;
