@@ -1,7 +1,10 @@
 const Footer = () => {
   return (
-    <footer>
-© 2026 Work Sphere. All Rights Reserved.    </footer>
+    <footer className="footer">
+      <p>
+        © 2026 WORK Sphere. All rights reserved.
+      </p>
+    </footer>
   );
 };
 

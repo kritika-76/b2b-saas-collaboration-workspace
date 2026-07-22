@@ -1,12 +1,18 @@
-import MainLayout from "../../components/layout/MainLayout";
+import Hero from "../../components/home/Hero";
+import Features from "../../components/home/Features";
+import Stats from "../../components/home/Stats";
+import Testimonials from "../../components/home/Testimonials";
+import CTA from "../../components/home/CTA";
 
 const Home = () => {
   return (
-    <MainLayout>
-      <div className="dashboard-page">
-        <h1>Home Page</h1>
-      </div>
-    </MainLayout>
+    <div className="dashboard-page">
+      <Hero />
+      <Features />
+      <Stats />
+      <Testimonials />
+      <CTA />
+    </div>
   );
 };
 

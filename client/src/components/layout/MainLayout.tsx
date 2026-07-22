@@ -1,13 +1,10 @@
-import type { ReactNode } from "react";
+import { Outlet } from "react-router-dom";
+
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 
-type MainLayoutProps = {
-  children: ReactNode;
-};
-
-const MainLayout = ({ children }: MainLayoutProps) => {
+const MainLayout = () => {
   return (
     <>
       <Navbar />
@@ -15,12 +12,14 @@ const MainLayout = ({ children }: MainLayoutProps) => {
       <div className="layout">
         <Sidebar />
 
-        <main className="main-content">
-          {children}
-        </main>
-      </div>
+        <div className="content-wrapper">
+          <main className="main-content">
+            <Outlet />
+          </main>
 
-      <Footer />
+          <Footer />
+        </div>
+      </div>
     </>
   );
 };

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   FiMenu,
   FiBell,
@@ -22,9 +23,9 @@ const Navbar = () => {
           <FiMenu />
         </button>
 
-        <h2 className="logo">
-          <span>WORK </span>Sphere
-        </h2>
+       <Link to="/" className="logo">
+  <span>WORK </span>Sphere
+</Link>
       </div>
 
       <div className="search-box">
