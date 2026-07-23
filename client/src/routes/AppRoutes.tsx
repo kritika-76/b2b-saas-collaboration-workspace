@@ -10,8 +10,10 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import NotFound from "../pages/NotFound/NotFound";
 import Tasks from "../pages/Tasks/Tasks";
+import Chat from "../pages/Chat/Chat";
 
 const AppRoutes = () => {
+
   return (
     <BrowserRouter>
       <Routes>
@@ -19,6 +21,7 @@ const AppRoutes = () => {
         {/* Routes that use Navbar + Sidebar */}
         <Route element={<MainLayout />}>
 <Route path="/tasks" element={<Tasks />} />
+<Route path="/chat" element={<Chat />} />
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/projects" element={<Projects />} />
