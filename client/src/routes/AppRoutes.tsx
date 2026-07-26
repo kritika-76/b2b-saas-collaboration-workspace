@@ -11,7 +11,7 @@ import Register from "../pages/Register/Register";
 import NotFound from "../pages/NotFound/NotFound";
 import Tasks from "../pages/Tasks/Tasks";
 import Chat from "../pages/Chat/Chat";
-
+import Calendar from "../pages/Calendar.tsx";
 const AppRoutes = () => {
 
   return (
@@ -22,6 +22,7 @@ const AppRoutes = () => {
         <Route element={<MainLayout />}>
 <Route path="/tasks" element={<Tasks />} />
 <Route path="/chat" element={<Chat />} />
+<Route path="/calendar" element={<Calendar />} />
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/projects" element={<Projects />} />
