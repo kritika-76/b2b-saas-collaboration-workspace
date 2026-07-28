@@ -1,37 +1,56 @@
-import PriorityBadge from "./PriorityBadge";
-import StatusBadge from "./StatusBadge";
+import type { Task } from "../../constants/tasks";
 
-type TaskCardProps = {
-  title: string;
-  priority: string;
-  status: string;
-  completed: boolean;
-};
+interface TaskCardProps {
+  task: Task;
+  onEdit: (task: Task) => void;
+  onDelete: (id: number) => void;
+}
+
 
 const TaskCard = ({
-  title,
-  priority,
-  status,
-  completed,
+  task,
+  onEdit,
+  onDelete,
 }: TaskCardProps) => {
   return (
-    <div className="task-card">
-      <div className="task-left">
-        <input type="checkbox" checked={completed} readOnly />
+<div
+  className="task-card"
+  onClick={() => onEdit(task)}
+>
+      <h3>{task.title}</h3>
 
-        <span
-          className={`task-title ${
-            completed ? "completed-task" : ""
-          }`}
-        >
-          {title}
+      <p>{task.description}</p>
+
+      <div className="task-footer">
+        <span className={`priority ${task.priority}`}>
+          {task.priority.toUpperCase()}
         </span>
+
+        <span>{task.dueDate}</span>
       </div>
 
-      <div className="task-right">
-        <PriorityBadge priority={priority} />
-        <StatusBadge status={status} />
+      <div className="assignee">
+        Assigned to: {task.assignee}
       </div>
+
+<div
+  className="task-actions"
+  onClick={(e) => e.stopPropagation()}
+>        <button
+          className="edit-btn"
+          onClick={() => onEdit(task)}
+        >
+          Edit
+        </button>
+
+        <button
+          className="delete-btn"
+          onClick={() => onDelete(task.id)}
+        >
+          Delete
+        </button>
+      </div>
+
     </div>
   );
 };

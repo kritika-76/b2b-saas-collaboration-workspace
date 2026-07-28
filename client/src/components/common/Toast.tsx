@@ -1,6 +1,4 @@
-import { FiCheckCircle, FiAlertCircle, FiX } from "react-icons/fi";
-
-export interface ToastProps {
+interface ToastProps {
   message: string;
   type?: "success" | "error";
   onClose: () => void;
@@ -13,21 +11,10 @@ const Toast = ({
 }: ToastProps) => {
   return (
     <div className={`toast ${type}`}>
-      <div className="toast-left">
-        {type === "success" ? (
-          <FiCheckCircle />
-        ) : (
-          <FiAlertCircle />
-        )}
+      <span>{message}</span>
 
-        <span>{message}</span>
-      </div>
-
-      <button
-        className="toast-close"
-        onClick={onClose}
-      >
-        <FiX />
+      <button onClick={onClose}>
+        ✕
       </button>
     </div>
   );
