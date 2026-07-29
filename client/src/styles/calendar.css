@@ -4,8 +4,7 @@
 
 .calendar-page {
   padding: 24px;
-  background: #f5f7fb;
-  min-height: 100vh;
+background:var(--bg);  min-height: 100vh;
 }
 
 /* ===========================
@@ -47,8 +46,7 @@
   height: 42px;
   border: none;
   border-radius: 50%;
-  background: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+background:var(--bg);  box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
   cursor: pointer;
   transition: .3s;
   display: flex;
@@ -81,8 +79,7 @@
 =========================== */
 
 .calendar-container {
-  background: white;
-  border-radius: 18px;
+background:var(--bg);  border-radius: 18px;
   padding: 22px;
   box-shadow: 0 10px 30px rgba(0,0,0,.08);
 }
@@ -117,16 +114,14 @@
   padding: 10px;
   cursor: pointer;
   transition: .25s;
-  background: white;
-  display: flex;
+background:var(--bg);  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .calendar-cell:hover {
   transform: translateY(-3px);
-  background: #eef5ff;
-}
+background:var(--bg);}
 
 .calendar-date {
   font-weight: 600;
@@ -134,8 +129,7 @@
 }
 
 .other-month {
-  background: #fafafa;
-  color: #b8b8b8;
+background:var(--bg);  color: #b8b8b8;
 }
 
 .today {
@@ -183,8 +177,7 @@
 =========================== */
 
 .upcoming-events {
-  background: white;
-  border-radius: 18px;
+background:var(--bg);  border-radius: 18px;
   padding: 22px;
   box-shadow: 0 10px 30px rgba(0,0,0,.08);
   height: fit-content;
@@ -217,8 +210,7 @@
 .event-card {
   display: flex;
   gap: 14px;
-  background: #f8f9fc;
-  border-radius: 12px;
+background:var(--bg);  border-radius: 12px;
   padding: 14px;
   transition: .25s;
 }
@@ -345,8 +337,7 @@ padding:8px;
 .details-modal{
     width:450px;
     max-width:95%;
-    background:#fff;
-    border-radius:18px;
+background:var(--bg);    border-radius:18px;
     padding:25px;
     animation:fadeIn .25s ease;
 }
@@ -508,8 +499,7 @@ input,
 /* Calendar Card */
 
 .calendar-main{
-    background:#fff;
-    border-radius:18px;
+background:var(--bg);    border-radius:18px;
     padding:20px;
     box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
@@ -517,8 +507,7 @@ input,
 /* Upcoming Sidebar */
 
 .upcoming-events{
-    background:#fff;
-    border-radius:18px;
+background:var(--bg);    border-radius:18px;
     padding:20px;
     box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
@@ -533,8 +522,7 @@ input,
     border-radius:12px;
     margin-bottom:12px;
     border:1px solid #ececec;
-    background:#fff;
-}
+background:var(--bg);}
 
 .event-card:hover{
     transform:translateY(-3px);
@@ -588,8 +576,7 @@ input,
     border:none;
     border-radius:8px;
     cursor:pointer;
-    background:#f5f5f5;
-}
+background:var(--bg);}
 
 .icon-btn:hover{
     background:#4f46e5;
@@ -638,8 +625,7 @@ input:focus{
 }
 
 .calendar-cell:hover{
-    background:#eef2ff;
-    cursor:pointer;
+background:var(--bg);    cursor:pointer;
 }
 
 .selected{
@@ -679,8 +665,7 @@ input:focus{
 }
 
 .events-list::-webkit-scrollbar-thumb{
-    background:#d1d5db;
-    border-radius:10px;
+background:var(--bg);    border-radius:10px;
 }
 
 /* Responsive */

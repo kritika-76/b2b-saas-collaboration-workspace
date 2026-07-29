@@ -1,0 +1,32 @@
+:root{
+
+--bg:#f5f7fb;
+--card:#ffffff;
+--text:#1f2937;
+--text-light:#6b7280;
+--border:#e5e7eb;
+
+--primary:#2563eb;
+
+}
+body.dark-mode{
+
+--bg:#111827;
+--card:#1f2937;
+--text:#ffffff;
+--text-light:#d1d5db;
+--border:#374151;
+
+}
+input,
+textarea,
+select{
+    background:var(--card);
+    color:var(--text);
+    border:1px solid var(--border);
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:var(--text-light);
+}

@@ -1,7 +1,7 @@
 .tasks-page{
     padding:24px;
-    background:#f5f7fb;
-    min-height:100vh;
+  background:var(--bg);
+      min-height:100vh;
 }
 
 .tasks-header{
@@ -24,7 +24,7 @@
 }
 
 .task-column{
-    background:#fff;
+background:var(--bg);
     padding:20px;
     border-radius:16px;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
@@ -35,8 +35,7 @@
 }
 
 .task-card{
-    background:#f8f9fc;
-    padding:18px;
+background:var(--bg);    padding:18px;
     border-radius:12px;
     margin-bottom:15px;
     transition:.25s;
@@ -112,7 +111,7 @@
 }
 
 .task-modal{
-    background:white;
+background:var(--card);
     padding:30px;
     border-radius:16px;
     width:420px;
@@ -125,8 +124,7 @@
 .task-modal textarea,
 .task-modal select{
     padding:12px;
-    border:1px solid #ddd;
-    border-radius:10px;
+border:1px solid var(--border);    border-radius:10px;
 }
 
 .modal-buttons{
@@ -138,8 +136,7 @@
 .task-search{
     width:100%;
     padding:12px;
-    border:1px solid #ddd;
-    border-radius:10px;
+border:1px solid var(--border);    border-radius:10px;
     margin:20px 0;
 }
 
@@ -157,8 +154,7 @@
 }
 
 .task-stats div{
-    background:#fff;
-    padding:20px;
+background:var(--bg);    padding:20px;
     border-radius:14px;
     text-align:center;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
@@ -172,7 +168,7 @@
 }
 
 .stat-card{
-    background:white;
+background:var(--card);
     border-radius:16px;
     padding:20px;
     text-align:center;
@@ -237,7 +233,7 @@
 }
 
 .task-card{
-    background:white;
+background:var(--card);
     border-radius:14px;
     padding:18px;
     margin-bottom:15px;

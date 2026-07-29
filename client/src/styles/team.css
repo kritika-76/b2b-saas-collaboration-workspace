@@ -1,8 +1,8 @@
 /* Page */
 .team-page{
     padding:24px;
-    background:#f5f7fb;
-    min-height:100vh;
+ background:var(--bg);
+     min-height:100vh;
 }
 
 /* Header */
@@ -12,27 +12,29 @@
     align-items:center;
     gap:20px;
     margin-bottom:30px;
+    
     flex-wrap:wrap;
 }
 
 .team-header h1{
     font-size:32px;
-    color:#1e293b;
+color:var(--text);
     margin-bottom:6px;
+    
 }
 
 .team-header p{
-    color:#64748b;
-}
+color:var(--text-light);}
 
 .team-search{
     flex:1;
     min-width:250px;
     max-width:350px;
     padding:12px 16px;
-    border:1px solid #d1d5db;
+border:1px solid var(--border);
     border-radius:10px;
     outline:none;
+    
     font-size:15px;
 }
 
@@ -65,7 +67,7 @@
 }
 
 .stat-card{
-    background:#fff;
+background:var(--card);
     border-radius:16px;
     padding:25px;
     text-align:center;
@@ -84,8 +86,7 @@
 }
 
 .stat-card p{
-    color:#64748b;
-}
+color:var(--text-light);}
 
 /* Member Grid */
 .member-grid{
@@ -96,7 +97,7 @@
 
 /* Member Card */
 .member-card{
-    background:#fff;
+background:var(--card);
     border-radius:18px;
     padding:24px;
     text-align:center;
@@ -120,8 +121,7 @@
 
 .member-card h3{
     margin-bottom:8px;
-    color:#1e293b;
-}
+color:var(--text);}
 
 .member-card p{
     color:#2563eb;
@@ -131,13 +131,13 @@
 
 .member-card span{
     display:block;
-    color:#64748b;
+color:var(--text-light);
     margin-bottom:6px;
 }
 
 .member-card small{
     display:block;
-    color:#64748b;
+    color:var(--text-light);
     margin-bottom:15px;
 }
 
@@ -163,15 +163,14 @@
 .modal-overlay{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.45);
-    display:flex;
+color:var(--text);    display:flex;
     justify-content:center;
     align-items:center;
     z-index:1000;
 }
 
 .member-modal{
-    background:#fff;
+    background:var(--card);
     width:420px;
     padding:30px;
     border-radius:18px;
@@ -208,8 +207,7 @@
 }
 
 .modal-buttons button:first-child{
-    background:#e5e7eb;
-}
+background:var(--card);}
 
 .modal-buttons button:last-child{
     background:#2563eb;
@@ -276,8 +274,7 @@
 .role-filter{
     padding:12px;
     border-radius:10px;
-    border:1px solid #ddd;
-    min-width:180px;
+border:1px solid var(--border);    min-width:180px;
 }
 
 .status-btn{
@@ -292,6 +289,7 @@
 
 .status-btn:hover{
     background:#059669;
+    
 }
 
 .member-actions{
@@ -303,5 +301,6 @@
 
 .member-card:hover{
     transform:translateY(-8px);
+    
     box-shadow:0 20px 40px rgba(0,0,0,.15);
 }
