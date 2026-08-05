@@ -1,0 +1,483 @@
+/* ===========================
+   PROFILE PAGE
+=========================== */
+
+.profile-page {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.profile-header {
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+  color: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(37,99,235,.25);
+}
+
+.profile-header h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.profile-header p {
+  opacity: .9;
+  font-size: 15px;
+}
+
+/* ===========================
+   LAYOUT
+=========================== */
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 25px;
+}
+
+/* ===========================
+   LEFT CARD
+=========================== */
+
+.profile-card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  transition: .3s;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #2563eb;
+  margin-bottom: 18px;
+}
+
+.profile-card h2 {
+  margin-bottom: 6px;
+}
+
+.profile-role {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.profile-info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #555;
+  font-size: 14px;
+}
+
+.edit-profile-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.edit-profile-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ===========================
+   RIGHT CARDS
+=========================== */
+
+.profile-section {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.profile-section h3 {
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* ===========================
+   ABOUT GRID
+=========================== */
+
+.about-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 18px;
+}
+
+.about-grid div {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+/* ===========================
+   SKILLS
+=========================== */
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-chip {
+  background: #2563eb;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 40px;
+  font-size: 14px;
+  transition: .3s;
+}
+
+.skill-chip:hover {
+  transform: scale(1.05);
+}
+
+/* ===========================
+   ACTIVITY
+=========================== */
+
+.activity-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-list li {
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid #2563eb;
+}
+
+/* ===========================
+   STATS
+=========================== */
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+}
+
+.stat-card {
+  background: white;
+  text-align: center;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  transition: .3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h2 {
+  color: #2563eb;
+  font-size: 38px;
+}
+
+.stat-card p {
+  color: #666;
+  margin-top: 10px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.profile-layout{
+grid-template-columns:1fr;
+}
+
+.profile-stats{
+grid-template-columns:1fr;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.profile-card{
+order:-1;
+}
+
+}
+/* Modal */
+
+.modal-overlay{
+
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.55);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:999;
+
+}
+
+.profile-modal{
+
+width:430px;
+
+background:white;
+
+padding:30px;
+
+border-radius:18px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+box-shadow:0 25px 60px rgba(0,0,0,.2);
+
+}
+
+.profile-modal h2{
+
+margin-bottom:10px;
+
+}
+
+.profile-modal input,
+
+.profile-modal textarea{
+
+padding:12px;
+
+border-radius:10px;
+
+border:1px solid #ddd;
+
+font-size:15px;
+
+resize:none;
+
+}
+
+.profile-modal textarea{
+
+min-height:100px;
+
+}
+
+.modal-buttons{
+
+display:flex;
+
+justify-content:flex-end;
+
+gap:12px;
+
+}
+
+.modal-buttons button{
+
+padding:11px 18px;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-weight:600;
+
+}
+
+.modal-buttons button:first-child{
+
+background:#e5e7eb;
+
+}
+
+.modal-buttons button:last-child{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+
+/* ===========================
+   TOAST
+=========================== */
+
+.profile-toast{
+
+position:fixed;
+
+top:25px;
+
+right:25px;
+
+background:#22c55e;
+
+color:white;
+
+padding:14px 22px;
+
+border-radius:12px;
+
+font-weight:600;
+
+box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+animation:slideToast .35s ease;
+
+z-index:9999;
+
+}
+
+@keyframes slideToast{
+
+from{
+
+opacity:0;
+
+transform:translateX(80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+/* ===========================
+   PROFILE ANIMATION
+=========================== */
+
+.profile-card{
+
+transition:.3s;
+
+}
+
+.profile-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+/* ===========================
+   MODAL IMAGE
+=========================== */
+
+.profile-modal input[type="file"]{
+
+padding:10px;
+
+}
+
+.remove-photo-btn{
+
+background:#ef4444;
+
+color:white;
+
+border:none;
+
+padding:12px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.remove-photo-btn:hover{
+
+background:#dc2626;
+
+}
+
+.skill-item{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.delete-skill-btn{
+
+background:#ef4444;
+color:white;
+
+border:none;
+
+width:28px;
+height:28px;
+
+border-radius:50%;
+
+cursor:pointer;
+
+}
+
+.add-skill-btn{
+
+margin-top:20px;
+
+padding:10px 18px;
+
+background:#2563eb;
+
+color:white;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+font-weight:600;
+
+}
