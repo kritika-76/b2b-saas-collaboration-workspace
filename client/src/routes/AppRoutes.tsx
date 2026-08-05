@@ -16,6 +16,7 @@ import Team from "../pages/Team/Team";
 import Documents from "../pages/Documents/Documents.tsx";
 import Settings from "../pages/Settings/Settings.tsx";
 
+
 const AppRoutes = () => {
 
   return (
@@ -24,6 +25,7 @@ const AppRoutes = () => {
 
         {/* Routes that use Navbar + Sidebar */}
         <Route element={<MainLayout />}>
+          <Route path="/documents" element={<Documents />} />
         <Route path="/documents" element={<Documents />} />
 <Route path="/tasks" element={<Tasks />} />
 <Route

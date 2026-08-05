@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 import {
   FiMenu,
@@ -12,6 +14,7 @@ import {
 } from "react-icons/fi";
 
 const Navbar = () => {
+  const navigate = useNavigate();
     const [showNotifications, setShowNotifications] = useState(false);
     const [showProfile, setShowProfile] = useState(false);
   const [search, setSearch] = useState("");
@@ -83,9 +86,9 @@ const Navbar = () => {
   )}
 </div>
 
-        <button>
-          <FiMessageSquare />
-        </button>
+      <button onClick={() => navigate("/chat")}>
+  <FiMessageSquare />
+</button>
 
       <div className="profile-wrapper">
 
@@ -99,20 +102,39 @@ const Navbar = () => {
   {showProfile && (
     <div className="profile-dropdown">
 
-      <div className="profile-item">
-        <FiUser />
-        <span>My Profile</span>
-      </div>
+    <div
+  className="profile-item"
+  onClick={() => {
+    navigate("/profile");
+    setShowProfile(false);
+  }}
+>
+  <FiUser />
+  <span>My Profile</span>
+</div>
 
-      <div className="profile-item">
-        <FiSettings />
-        <span>Settings</span>
-      </div>
+    <div
+  className="profile-item"
+  onClick={() => {
+    navigate("/settings");
+    setShowProfile(false);
+  }}
+>
+  <FiSettings />
+  <span>Settings</span>
+</div>
 
-      <div className="profile-item logout">
-        <FiLogOut />
-        <span>Logout</span>
-      </div>
+   <div
+  className="profile-item logout"
+  onClick={() => {
+    localStorage.clear(); // or remove only auth token if you have one
+    navigate("/login");
+    setShowProfile(false);
+  }}
+>
+  <FiLogOut />
+  <span>Logout</span>
+</div>
 
     </div>
   )}
