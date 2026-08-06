@@ -3,60 +3,90 @@ import {
   FiLinkedin,
   FiGlobe,
   FiTwitter,
+  FiEdit2,
 } from "react-icons/fi";
 
 import type { ProfileData } from "../../constants/profile";
 
 interface Props {
   profile: ProfileData;
+  onEdit: () => void;
 }
 
-const SocialLinks = ({ profile }: Props) => {
+const SocialLinks = ({
+  profile,
+  onEdit,
+}: Props) => {
+
   return (
-    <div className="social-links">
 
-      <a
-        href={profile.github}
-        target="_blank"
-        rel="noreferrer"
-        className="social-btn github"
-      >
-        <FiGithub />
-        GitHub
-      </a>
+<div className="social-card">
 
-      <a
-        href={profile.linkedin}
-        target="_blank"
-        rel="noreferrer"
-        className="social-btn linkedin"
-      >
-        <FiLinkedin />
-        LinkedIn
-      </a>
+<div className="social-header">
 
-      <a
-        href={profile.portfolio}
-        target="_blank"
-        rel="noreferrer"
-        className="social-btn portfolio"
-      >
-        <FiGlobe />
-        Portfolio
-      </a>
+<h3>Social Links</h3>
 
-      <a
-        href={profile.twitter}
-        target="_blank"
-        rel="noreferrer"
-        className="social-btn twitter"
-      >
-        <FiTwitter />
-        Twitter
-      </a>
+<button
+className="social-edit-btn"
+onClick={onEdit}
+>
 
-    </div>
+<FiEdit2/>
+
+Edit
+
+</button>
+
+</div>
+
+<a
+href={profile.github}
+target="_blank"
+>
+
+<FiGithub/>
+
+GitHub
+
+</a>
+
+<a
+href={profile.linkedin}
+target="_blank"
+>
+
+<FiLinkedin/>
+
+LinkedIn
+
+</a>
+
+<a
+href={profile.portfolio}
+target="_blank"
+>
+
+<FiGlobe/>
+
+Portfolio
+
+</a>
+
+<a
+href={profile.twitter}
+target="_blank"
+>
+
+<FiTwitter/>
+
+Twitter
+
+</a>
+
+</div>
+
   );
+
 };
 
 export default SocialLinks;

@@ -50,7 +50,70 @@ const EditProfileModal = ({
             })
           }
         />
+        <input
+  placeholder="Role"
+  value={form.role}
+  onChange={(e) =>
+    setForm({
+      ...form,
+      role: e.target.value,
+    })
+  }
+/>
 
+<input
+  placeholder="Experience"
+  value={form.experience}
+  onChange={(e) =>
+    setForm({
+      ...form,
+      experience: e.target.value,
+    })
+  }
+/>
+
+<input
+  placeholder="Joined"
+  value={form.joined}
+  onChange={(e) =>
+    setForm({
+      ...form,
+      joined: e.target.value,
+    })
+  }
+/>
+<label className="upload-label">
+
+Change Cover Banner
+
+<input
+  type="file"
+  hidden
+  accept="image/*"
+  onChange={(e) => {
+
+    const file = e.target.files?.[0];
+
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = () => {
+
+      setForm({
+        ...form,
+        coverImage:
+          reader.result as string,
+      });
+
+    };
+
+    reader.readAsDataURL(file);
+
+  }}
+/>
+
+</label>
         <input
   type="file"
   accept="image/*"

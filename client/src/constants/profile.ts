@@ -23,7 +23,8 @@ export interface ProfileData {
 
   projects: number;
   tasks: number;
-  experience: number;
+  experience: string;
+joined: string;
 }
 
 export const defaultProfile: ProfileData = {
@@ -71,5 +72,7 @@ export const defaultProfile: ProfileData = {
 
   tasks: 142,
 
-  experience: 2,
+  experience: "2 Years Experience",
+
+joined: "Joined March 2025",
 };

@@ -3,7 +3,6 @@ import CoverBanner from "../../components/profile/CoverBanner";
 import EditProfileModal from "../../components/profile/EditProfileModal";
 import AddSkillModal from "../../components/profile/AddSkillModal";
 import ProfileToast from "../../components/profile/ProfileToast";
-import SocialLinks from "../../components/profile/SocialLinks";
 import ProfileHeader from "../../components/profile/ProfileHeader";
 import ProfileCard from "../../components/profile/ProfileCard";
 import AboutCard from "../../components/profile/AboutCard";
@@ -12,6 +11,8 @@ import ActivityCard from "../../components/profile/ActivityCard";
 import StatsCard from "../../components/profile/StatsCard";
 import ResumeCard from "../../components/profile/ResumeCard";
 import ProfileCompletion from "../../components/profile/ProfileCompletion";
+import SocialLinks from "../../components/profile/SocialLinks";
+import EditSocialModal from "../../components/profile/EditSocialModal";
 
 import "../../styles/profile.css";
 
@@ -23,6 +24,8 @@ import {
 const STORAGE_KEY = "worksphere-profile";
 
 const Profile = () => {
+  const [isSocialOpen,setIsSocialOpen]=useState(false);
+  
   const [toast, setToast] = useState("");
   const [isEditingSkills, setIsEditingSkills] =
   useState(false);
@@ -164,31 +167,83 @@ const Profile = () => {
     }, 3000);
   };
 
-  const handleResumeUpload = (
+const handleResumeUpload = (
   e: React.ChangeEvent<HTMLInputElement>
 ) => {
+
   const file = e.target.files?.[0];
 
   if (!file) return;
 
+  const allowed = [
+    "application/pdf",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  ];
+
+  if (!allowed.includes(file.type)) {
+
+    setToast(
+      "Only PDF, DOC and DOCX files are allowed."
+    );
+
+    setTimeout(() => setToast(""),3000);
+
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+
+    setToast(
+      "Maximum file size is 5 MB."
+    );
+
+    setTimeout(() => setToast(""),3000);
+
+    return;
+  }
+
   const reader = new FileReader();
 
   reader.onload = () => {
+
     setProfile({
       ...profile,
       resume: reader.result as string,
     });
 
-    setToast("Resume uploaded!");
+    setToast(
+      "Resume uploaded successfully!"
+    );
 
-    setTimeout(() => {
+    setTimeout(()=>{
       setToast("");
-    }, 3000);
+    },3000);
+
   };
 
   reader.readAsDataURL(file);
+
 };
 
+
+const handleSaveSocial = (
+updatedProfile: ProfileData
+) => {
+
+setProfile(updatedProfile);
+
+setToast(
+"Social links updated!"
+);
+
+setTimeout(()=>{
+
+setToast("");
+
+},3000);
+
+};
 const handleRemoveResume = () => {
   setProfile({
     ...profile,
@@ -208,56 +263,75 @@ const handleRemoveResume = () => {
 
 <CoverBanner profile={profile} />
 
-      <div className="profile-layout">
+    <div className="profile-dashboard">
 
-        <div className="profile-left">
+    <div className="profile-sidebar">
 
-  <ProfileCard
-    profile={profile}
-    onEdit={() => setIsEditOpen(true)}
-  />
+        <ProfileCard
+            profile={profile}
+            onEdit={() => setIsEditOpen(true)}
+        />
 
-  <SocialLinks
-    profile={profile}
-  />
-  <ResumeCard
-  profile={profile}
-  onUploadResume={handleResumeUpload}
-  onRemoveResume={handleRemoveResume}
+   <SocialLinks
+profile={profile}
+onEdit={() =>
+setIsSocialOpen(true)
+}
+/>
+<EditSocialModal
+isOpen={isSocialOpen}
+onClose={() =>
+setIsSocialOpen(false)
+}
+profile={profile}
+onSave={handleSaveSocial}
 />
 
-<ProfileCompletion
-  profile={profile}
-/>
+
+        <ResumeCard
+            profile={profile}
+            onUploadResume={handleResumeUpload}
+            onRemoveResume={handleRemoveResume}
+        />
+
+        <ProfileCompletion
+            profile={profile}
+        />
+
+    </div>
+
+    <div className="profile-main">
+
+        <AboutCard
+            profile={profile}
+        />
+
+        <SkillsCard
+            profile={profile}
+            isEditing={isEditingSkills}
+            onToggleEdit={() =>
+                setIsEditingSkills(!isEditingSkills)
+            }
+            onAddSkill={()=>{
+                setEditingSkill(null);
+                setIsSkillOpen(true);
+            }}
+            onDeleteSkill={handleDeleteSkill}
+            onEditSkill={(skill)=>{
+                setEditingSkill(skill);
+                setIsSkillOpen(true);
+            }}
+        />
+
+        <StatsCard
+            profile={profile}
+        />
+
+        <ActivityCard/>
+
+    </div>
 
 </div>
-        
-
-        <div className="profile-right">
-
-          <AboutCard
-            profile={profile}
-          />
-<SkillsCard
-  profile={profile}
-  isEditing={isEditingSkills}
-  onToggleEdit={() =>
-    setIsEditingSkills(!isEditingSkills)
-  }
-  onAddSkill={() => {
-    setEditingSkill(null);
-    setIsSkillOpen(true);
-  }}
-  onDeleteSkill={handleDeleteSkill}
-  onEditSkill={(skill) => {
-    setEditingSkill(skill);
-    setIsSkillOpen(true);
-  }}
-/>
-
-        </div>
-
-      </div>
 
       <ActivityCard />
 
