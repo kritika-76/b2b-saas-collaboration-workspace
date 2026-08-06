@@ -1,72 +1,75 @@
 export interface ProfileData {
-  id: number;
-
   name: string;
-
   role: string;
-
   email: string;
-
   phone: string;
-
   location: string;
-
   department: string;
-
-  experience: string;
-
-  joinDate: string;
-
   bio: string;
 
   avatar: string;
+  coverImage: string;
+
+  isOnline: boolean;
+
+  github: string;
+  linkedin: string;
+  portfolio: string;
+  twitter: string;
+
+  resume: string | null;
 
   skills: string[];
 
-  completedProjects: number;
-
-  completedTasks: number;
-
-  teamMembers: number;
+  projects: number;
+  tasks: number;
+  experience: number;
 }
 
 export const defaultProfile: ProfileData = {
-  id: 1,
-
-  name: "Kritika",
-
+  name: "Kritika Bendwar",
   role: "Frontend Developer",
 
-  email: "kritika@example.com",
+  email: "kritika@gmail.com",
 
   phone: "+91 9876543210",
 
   location: "Nagpur, India",
 
-  department: "Development",
-
-  experience: "2 Years",
-
-  joinDate: "January 2026",
+  department: "Engineering",
 
   bio:
-    "Frontend Developer passionate about React, TypeScript and UI Design.",
+    "Frontend developer passionate about building beautiful user experiences.",
 
   avatar:
-    "https://i.pravatar.cc/300?img=47",
+    "https://i.pravatar.cc/300?img=5",
+
+  coverImage:
+    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200",
+
+  isOnline: true,
+
+  github: "https://github.com/",
+
+  linkedin: "https://linkedin.com/",
+
+  portfolio: "https://portfolio.com",
+
+  twitter: "https://twitter.com/",
+
+  resume: null,
 
   skills: [
     "React",
     "TypeScript",
-    "CSS",
-    "JavaScript",
     "HTML",
-    "Git"
+    "CSS",
+    "Git",
   ],
 
-  completedProjects: 18,
+  projects: 18,
 
-  completedTasks: 146,
+  tasks: 142,
 
-  teamMembers: 12,
+  experience: 2,
 };

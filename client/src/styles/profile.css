@@ -155,8 +155,10 @@
   transition: .3s;
 }
 
-.skill-chip:hover {
-  transform: scale(1.05);
+.skill-chip:hover{
+background:#2563eb;
+color:white;
+transform:translateY(-2px);
 }
 
 /* ===========================
@@ -480,4 +482,490 @@ cursor:pointer;
 
 font-weight:600;
 
+}
+
+
+/* ===========================
+   SKILLS
+=========================== */
+
+.skills-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.skills-list{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.skill-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#f8fafc;
+padding:12px 16px;
+border-radius:12px;
+transition:.3s;
+}
+
+.skill-item:hover{
+background:#eef4ff;
+}
+
+.skill-chip{
+display:flex;
+align-items:center;
+gap:10px;
+
+padding:10px 18px;
+
+background:#eff6ff;
+
+color:#2563eb;
+
+border:1px solid #bfdbfe;
+
+border-radius:30px;
+
+font-weight:600;
+
+transition:.3s;
+}
+
+.skill-actions{
+display:flex;
+gap:8px;
+}
+
+.skill-edit-btn,
+.skill-delete-btn{
+width:36px;
+height:36px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:15px;
+transition:.3s;
+}
+
+.skill-edit-btn{
+background:#2563eb;
+color:white;
+}
+
+.skill-edit-btn:hover{
+background:#1d4ed8;
+}
+
+.skill-delete-btn{
+background:#ef4444;
+color:white;
+}
+.skill-delete{
+
+width:22px;
+height:22px;
+
+border:none;
+
+border-radius:50%;
+
+background:#ef4444;
+
+color:white;
+
+cursor:pointer;
+
+font-size:12px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+.skill-delete-btn:hover{
+background:#dc2626;
+}
+
+.add-skill-btn{
+display:flex;
+align-items:center;
+gap:8px;
+padding:10px 18px;
+border:none;
+background:#10b981;
+color:white;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.add-skill-btn:hover{
+background:#059669;
+}
+
+.no-skills{
+text-align:center;
+color:#888;
+padding:20px;
+}
+
+
+.skills-wrapper{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+margin-top:20px;
+}
+
+.skill-chip{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+padding:12px 18px;
+
+background:#eef4ff;
+
+border:1px solid #dbeafe;
+
+border-radius:30px;
+
+font-weight:600;
+
+color:#2563eb;
+
+transition:.3s;
+}
+
+.skill-chip:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 18px rgba(37,99,235,.12);
+}
+
+.skill-chip-actions{
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.chip-edit-btn{
+
+width:28px;
+height:28px;
+
+border:none;
+
+border-radius:50%;
+
+background:#2563eb;
+
+color:white;
+
+cursor:pointer;
+
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.chip-delete-btn{
+
+width:28px;
+height:28px;
+
+border:none;
+
+border-radius:50%;
+
+background:#ef4444;
+
+color:white;
+
+cursor:pointer;
+
+font-size:18px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* ==========================================
+   COVER BANNER
+========================================== */
+
+.cover-banner{
+    width:100%;
+    height:240px;
+    border-radius:22px;
+    overflow:hidden;
+    position:relative;
+    margin-bottom:-75px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.cover-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.cover-gradient{
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5,
+        #7c3aed
+    );
+}
+
+.cover-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.35)
+    );
+}
+
+/* ===========================
+   SOCIAL LINKS
+=========================== */
+
+.social-links{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.social-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.social-btn svg{
+    font-size:18px;
+}
+
+.github{
+    background:#111827;
+    color:white;
+}
+
+.linkedin{
+    background:#0a66c2;
+    color:white;
+}
+
+.portfolio{
+    background:#10b981;
+    color:white;
+}
+
+.twitter{
+    background:#1d9bf0;
+    color:white;
+}
+
+.social-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+/* ===========================
+   RESUME CARD
+=========================== */
+
+.resume-card{
+
+background:white;
+
+margin-top:22px;
+
+padding:22px;
+
+border-radius:18px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.resume-card h3{
+
+margin-bottom:18px;
+
+}
+
+.resume-upload{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+padding:15px;
+
+border:2px dashed #2563eb;
+
+border-radius:12px;
+
+cursor:pointer;
+
+color:#2563eb;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.resume-upload:hover{
+
+background:#eff6ff;
+
+}
+
+.resume-actions{
+
+display:flex;
+
+gap:12px;
+
+margin-top:18px;
+
+}
+
+.resume-btn{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:8px;
+
+padding:12px;
+
+border:none;
+
+border-radius:10px;
+
+cursor:pointer;
+
+text-decoration:none;
+
+font-weight:600;
+
+}
+
+.resume-btn.download{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+.resume-btn.delete{
+
+background:#ef4444;
+
+color:white;
+
+}
+
+.resume-btn:hover{
+
+opacity:.9;
+
+}
+
+/* ===========================
+   PROFILE COMPLETION
+=========================== */
+
+.completion-card{
+    background:#fff;
+    margin-top:22px;
+    padding:22px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.completion-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.completion-header span{
+    font-size:22px;
+    font-weight:700;
+    color:#2563eb;
+}
+
+.progress-bar{
+    width:100%;
+    height:10px;
+    background:#e5e7eb;
+    border-radius:999px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.progress-fill{
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #4f46e5
+    );
+    border-radius:999px;
+    transition:width .4s ease;
+}
+
+.completion-items{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+}
+
+.completion-items p{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:14px;
+    color:#374151;
 }
