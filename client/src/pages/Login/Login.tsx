@@ -1,5 +1,14 @@
+import LoginBanner from "../../components/auth/LoginBanner";
+import LoginForm from "../../components/auth/LoginForm";
+import "../../styles/login.css";
+
 const Login = () => {
-  return <h1>Login Page</h1>;
+  return (
+    <div className="login-page">
+      <LoginBanner />
+      <LoginForm />
+    </div>
+  );
 };
 
 export default Login;

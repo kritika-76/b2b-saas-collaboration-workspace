@@ -124,16 +124,22 @@ const Navbar = () => {
   <span>Settings</span>
 </div>
 
-   <div
+ <div
   className="profile-item logout"
   onClick={() => {
-    localStorage.clear(); // or remove only auth token if you have one
+
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("loggedUser");
+
     navigate("/login");
-    setShowProfile(false);
+
   }}
 >
+
   <FiLogOut />
+
   <span>Logout</span>
+
 </div>
 
     </div>
